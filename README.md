@@ -1,13 +1,14 @@
 # ML para Entender LLMs
 
-Repositório de estudos baseado no livro *50 ML Projects to Understand LLMs*, de Mike X Cohen. A proposta é compreender o funcionamento dos modelos de linguagem por meio de experimentos em Python, análise de dados e visualização de suas representações internas.
+Repositório de estudos baseado no livro *50 ML Projects to Understand LLMs*, de Mike X Cohen. A proposta é compreender o funcionamento dos modelos de linguagem por meio de experimentos em Python, análise de dados e visualização de embeddings, hidden states e mecanismos de attention.
 
 ## Objetivos
 
 - Compreender como textos são convertidos em tokens e representações vetoriais.
 - Investigar relações semânticas e padrões nos embeddings.
 - Explorar a predição de tokens e a avaliação de modelos de linguagem.
-- Analisar como as representações se comportam entre as camadas de um transformer.
+- Analisar hidden states entre camadas e testar os efeitos de intervenções nas ativações.
+- Investigar mecanismos de attention e o papel das attention heads.
 - Conectar conceitos de aprendizado de máquina à investigação prática de LLMs.
 
 ## Mapa de estudos
@@ -15,26 +16,29 @@ Repositório de estudos baseado no livro *50 ML Projects to Understand LLMs*, de
 ```mermaid
 flowchart TD
     accTitle: Trilha de estudos de ML para entender LLMs
-    accDescr: Sequência dos capítulos presentes no repositório, da tokenização à análise das representações internas.
+    accDescr: Trilha dos capítulos 2 a 5, com o capítulo 6 previsto como próxima etapa de estudo.
 
-    C2["Capítulo 2<br/>Tokenização"]
-    C3["Capítulo 3<br/>Embeddings e similaridade"]
-    C4["Capítulo 4<br/>Predição e avaliação"]
-    C5["Capítulo 5<br/>Estados ocultos e camadas"]
+    C2["Capítulo 2<br/>Tokenization"]
+    C3["Capítulo 3<br/>Embeddings e similarity"]
+    C4["Capítulo 4<br/>Token prediction e evaluation"]
+    C5["Capítulo 5<br/>Hidden states"]
+    C6["Capítulo 6<br/>Attention — planejado"]
 
     C2 --> C3 --> C4 --> C5
+    C5 -.-> C6
 ```
 
 ## Conceitos por capítulo
 
 | Capítulo | Foco do estudo | Principais conceitos |
 | --- | --- | --- |
-| **2 — Tokenização** | Investigar a representação de textos e suas diferenças entre idiomas. | Caracteres, palavras, subpalavras, bytes, vocabulário e compressão. |
-| **3 — Embeddings e similaridade** | Explorar a geometria e as relações semânticas das representações vetoriais. | Similaridade de cosseno, distância euclidiana, grafos, comparação de representações, eixos semânticos e analogias. |
-| **4 — Predição e avaliação** | Entender a escolha do próximo token e analisar o desempenho dos modelos. | Softmax, temperatura, amostragem, acurácia, função de perda, perplexidade, regressão e benchmarks. |
-| **5 — Estados ocultos e camadas** | Iniciar a investigação das representações internas ao longo do modelo. | Extração de estados ocultos e similaridade dentro e entre camadas. |
+| **2 — Tokenization** | Investigar a representação de textos e suas diferenças entre idiomas. | Caracteres, palavras, subpalavras, bytes, vocabulário e compressão. |
+| **3 — Embeddings e similarity** | Explorar a geometria e as relações semânticas das representações vetoriais. | Cosine similarity, distância euclidiana, grafos, comparação de representações, eixos semânticos e analogias. |
+| **4 — Token prediction e evaluation** | Entender a escolha do próximo token e analisar o desempenho dos modelos. | Softmax, temperatura, amostragem, acurácia, loss, perplexity, regressão e benchmarks. |
+| **5 — Hidden states** | Comparar ativações entre tokens e camadas e investigar seu papel nas predições. | Cosine similarity, residual connections, hooks, ruído e escalonamento de ativações, dimensionalidade efetiva, redução de dimensionalidade, sentiment analysis com decision trees, logit lens e activation patching. |
+| **6 — Attention (planejado)** | Investigar como os mecanismos de attention relacionam tokens e como cada head contribui para o comportamento do modelo. | Queries, keys e values (QKV), attention heads, análise de ativações, hooks, head silencing e activation patching. |
 
-O material atual está organizado em `chapter_2/`, `chapter_3/` e `chapter_4/`, com um notebook do capítulo 5 na raiz. O repositório está em construção e será ampliado conforme o avanço dos estudos.
+O material atual está organizado em `chapter_2/`, `chapter_3/`, `chapter_4/` e `chapter 5/`. O capítulo 6 está previsto na trilha; sua descrição segue os [notebooks oficiais do capítulo](https://github.com/mikexcohen/ML4LLM_book/tree/main/chapter_6). O repositório está em construção e será ampliado conforme o avanço dos estudos.
 
 ## Referência principal
 
